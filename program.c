@@ -21,10 +21,10 @@ void citire(int n, int **v, FILE *f)
 void inmultire(int n, int **a, int **b, FILE *g)
 {
     int **c,i,j,k;
-    b=(int**)malloc(n*sizeof(int*));
+    c=(int**)malloc(n*sizeof(int*));
     for(int i=0; i<n; i++)
     {
-        b[i]=(int*)malloc(n*sizeof(int));
+        c[i]=(int*)malloc(n*sizeof(int));
     }
     for(i=0;i<n;i++)
     {
@@ -42,7 +42,7 @@ void inmultire(int n, int **a, int **b, FILE *g)
         {
             fprintf(g,"%d ",c[i][j]);
         }
-        fprintf(g,"/n");
+        fprintf(g,"\n");
     }
 }
 
@@ -64,6 +64,10 @@ int main()
     {
         b[i]=(int*)malloc(n*sizeof(int));
     }
+    citire(n,a,f);
+    citire(n,b,f);
+    inmultire(n,a,b,g);
     fclose(f);
     fclose(g);
 }
+
